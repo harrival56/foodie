@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %} Recipes searcher {% endblock %}
+{% block body %}
+<h2 class="card text-center text-danger">  Recipes for you: </h2>
+<div >
+    <div class="card recipes_body" style="max-width: 100%;">
+        <div class="row g-0">
+          {% for recipe in recipes %}
+          <div class="col-md-4">
+             
+            <a href="/recipe?id={{recipe['id']}}"><img src="{{recipe['image']}}" class="img-fluid rounded-start border border-2" alt="{{recipe['title']}}'s image" width="100%" height="100%" style="margin:0.5%;"></a>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><a href="/recipe?id={{ recipe['id'] }}">{{ recipe['title'] }}</a></h5>
+              <p class="card-text">{{recipe['summary'] | safe}}</p>
+              {% if recipe['aggregateLikes'] %}
+              <p class="card-text"><small class="text-muted">This recipe has {{recipe['aggregateLikes']}} likes</small></p>
+              {% endif %}
+            </div>
+            <div class="d-flex justify-content-end">
+              
+              <form>
+                <button class="btn btn-primary btn-sm"
+                        formaction="/add_menu?id={{ recipe['id'] }}&title={{recipe['title']}} "
+                        formmethod="GET">Add to menu
+                </button>
+                <button class="btn btn-danger btn-sm"
+                        formaction="/add_fav?id={{ recipe['id']}}&title={{recipe['title']}}&image={{recipe['image']}} "
+                        formmethod="POST">Add to favorite
+                </button>
+              </form>
+            </div> 
+            
+          
+          <hr class="border border-info">
+        </div>
+            {% endfor %}
+      
+    </div>
+</div >
+
+{% endblock %}

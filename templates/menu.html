@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+  
+{% endblock title %}
+
+{% block body %}
+  
+    <div class="container">
+    <table class="table table-striped">
+        <h1 class="display-1 d-flex justify-content-center">{{user.username}}'s menu</h1>
+        <thead class="table-dark">
+            <th>Food</th>
+            <th>Day</th>
+            <th>Time</th>
+            <th>X</th>
+        </thead>
+        <tbody>
+            {% for menu in user.menu%}
+            <tr>
+                <td><a href="/recipe?id={{ menu.recipe_id }}">{{menu.title}} </a></td>
+                <td>{{menu.day}} </td>
+                <td>{{menu.time}}</td>
+                <td><a href="/delete_menu?id={{ menu.id}}"><i class="fas fa-trash-alt"></i></a></td>
+            </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+    <div><a href="/"><i class="fas fa-backward"></i></a></div>
+    </div>
+{% endblock body %}

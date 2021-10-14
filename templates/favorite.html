@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+
+
+{% block body %}
+
+<div class="container">
+<div class="card text-center">
+    <div class="card-header">
+      Featured
+    </div>
+   {% for fav in user.favorite %}
+   <div class="card-body">
+    <h5 class="card-title">{{fav.title}}</h5>
+    <img src="{{fav.image}} " class="rounded mx-auto d-block" alt="{{fav.title}}'s image">
+    
+  </div>
+  <div class="card-footer text-muted">
+    <a href="/recipe?id={{ fav.recipe_id }}"> View recipe details</a>
+    <a class="d-flex justify-content-end" href="/delete_fav?id={{ fav.id }}"><i class="fas fa-trash-alt"></i></a>
+    <a class="d-flex justify-content-start" href="/"><i class="fas fa-backward"></i></a>
+</div>
+  <hr>
+   {% endfor %}
+  </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %} Recipes searcher {% endblock %}
+{% block body %}
+
+
+
+<center>
+  <h2 style="padding-top: 3%;">
+      It's time for cooking! What do you have in the fridge? <br>
+      <small class="text-muted"> Let's warm up with a joke: {{ joke }} </small>
+  </h2>
+  <br><br>
+  <form class="form-floating mb-3" action="/by_nutrients">
+      <div class="input-group mb-3" style="max-width: 50%;">
+        <div class="container">
+            <div class="row">
+              <div class="col">
+                <label for="minCal"> Minimum calories </label>
+                    <input class="form-control" type="number" id="minCal" min="50" max="800" value="50" name="minCal">
+                <label for="minCarb">Minmum Carbohydrate</label>
+                    <input class="form-control" type="number" id="minCarb" min="0" max="100" value="10" name="minCarb">
+                <label for="minProtein"> Minimum protein</label>
+                    <input class="form-control" type="number" id="minProtein" min="0" max="100" value="10" name="minProtein">
+                <label for="minFat">Minum fat</label>
+                    <input class="form-control" type="number" id="minFat" min="0" max="100" value="1" name="minFat">
+              </div>
+              <div class="col">
+                <label for="maxCal"> Maximum calories:</label>
+                    <input class="form-control" id="maxCal" type="number" min="50" max="800" value="800" name="maxCal">
+                <label for="maxCarb">Maximum carbohydrate</label>
+                    <input class="form-control" type="number" id="maxCarb" min="0" max="100" value="100" name="maxCarb">
+                <label for="maxProtein">Maximum protein</label>
+                    <input class="form-control" type="number" id="maxProtein" min="0" max="100" value="100" name="maxProtein">
+                <label for="maxFat">Maximum fat</label>
+                <input class="form-control" id="maxFat" type="number" min="0" max="100" value="100" name="maxFat">
+              </div>
+            </div>
+          <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Search</button>
+          </div>          
+      </div>
+  </form>
+</center>
+{% endblock %}

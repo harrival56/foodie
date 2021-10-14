@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block title %} {{recipe['title']}} {% endblock %}
+{% block body %}
+      <h2 class="card text-center text-danger">  Every Information you need about {{recipe['title']}} </h2>
+      <div class="card detail_body" style="margin:10%;">
+        <!-- <img src="{{recipe['image']}}" class="card-img-top" alt="{{recipe['title']}}'image" width="20px" height="200px"> -->
+        <!-- <img src="{{recipe['image']}}" class="img-fluid" alt="..."> -->
+        <img src="{{recipe['image']}}" class="rounded mx-auto d-block recipe_img" alt="...">
+        <div class="card-body">
+          <div class="card text-center">
+            <h5 class="card-title">{{recipe['title']}}</h5>
+          <b>Likes: {{recipe['aggregateLikes']}}</b>
+          <p>Healthy score: {{recipe['healthScore']}} </p>
+          <h4>Dish Types</h4>
+          <ul>
+          {%for dish in recipe['dishTypes']%}
+          <li class="dish_type">{{dish}}</li>
+          {%endfor%}
+          </ul>
+          </div>
+          <p class="card-text"> {{recipe['summary'] | safe}}</p>
+          <form>
+            <button class="btn btn-primary btn-sm"
+                    formaction="/add_menu?id={{ recipe['id'] }}&title={{recipe['title']}} "
+                    formmethod="GET">Add to menu
+            </button>
+            <button class="btn btn-danger btn-sm"
+                    formaction="/add_fav?id={{ recipe['id']}}&title={{recipe['title']}}&image={{recipe['image']}} "
+                    formmethod="POST">Add to favorite
+            </button>
+          </form>
+        </div>
+        <div>
+          <h3>Ingredient needed for this recipe</h3>
+          <p>{{recipe['inregdientsWidget'] | safe }}</p>
+          <h3>Kitchen utensils needed</h3>
+          <p>{{recipe['equipmentWidget'] | safe}} </p>
+          <section>
+            <h3>Step by step instructions </h3>
+            <p> {{recipe['instructions'] | safe}} </p>
+          </section>
+        </div>
+          {% if recipe['winePairing']['productMatches'] %}
+            {% for wine in recipe['winePairing']['productMatches'] %}
+              <div  >
+                <img src="{{wine.imageUrl}}" class="rounded mx-auto d-block border border-2" alt="wine.title">
+                <h2 class="card text-center">{{wine.title}} <small>goes for {{wine.price}}</small> </h2>
+              </div>
+              <p> {{wine.description}}</p>
+            {% endfor %}
+          {% endif %}
+          
+        </div>
+        </div>
+      </div>
+  
+{% endblock %}

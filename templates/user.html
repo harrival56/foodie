@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{ user.username }}
+{% endblock title %}
+
+{% block body %}
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-7 col-lg-5">
+            <h4>Username: <b>{{user.username}}</b></h4>
+            <h4>email: <b>{{user.email}}</b></h4>
+            <h4>Favorites: <ol>{% for fav in user.favorite %} 
+            <li>{{fav.image}}</li>
+             {%endfor%}</ol></h4>
+            <div>
+                <button>
+                    <a href="edit_profile"><i class="fas fa-pen"></i></a>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>  
+
+{% endblock body %}
