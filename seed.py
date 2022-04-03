@@ -6,12 +6,10 @@ db.drop_all()
 db.create_all()
 
 
-u1 = User(email="example@yahoo.com", username="harri", password="mypassword")
-u2 = User.signup("example2@yahoo.com", "harr1", "mypassword")
-db.session.add_all([u1, u2])
-db.session.commit()
-
-
+# u1 = User(email="example@yahoo.com", username="harri", password="mypassword")
+# u2 = User.signup("example2@yahoo.com", "harr1", "mypassword")
+# db.session.add_all([u1, u2])
+# db.session.commit()
 
 
 # m1 = Menu(day="monday", time="lunch", title="okpa", user_id=u1.id)
