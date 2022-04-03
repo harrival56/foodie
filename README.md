@@ -20,4 +20,4 @@ harrison-foodie.herokuapp.com
 
 Thank you for reading!
 
-** API request may be limited **
+__API request may be limited 
