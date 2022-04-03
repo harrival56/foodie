@@ -16,8 +16,8 @@ Also users can edit there profile whenever they want once logged in.
 
 #### Below is the link to my app
 
-harrison-foodie.herokuapp.com
+https://harrison-foodie.herokuapp.com
 
 Thank you for reading!
 
-__API request may be limited 
+__API request may be limited__
