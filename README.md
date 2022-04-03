@@ -18,6 +18,17 @@ Also users can edit there profile whenever they want once logged in.
 
 https://harrison-foodie.herokuapp.com
 
-Thank you for reading!
+
 
 __API request may be limited__
+
+
+The API I used is called spoonacular and this is there link "https://api.spoonacular.com/"
+
+It's pretty nice and easy to understand, I highly recommend anybody who may want to try it out. 
+
+I used free version and I got limmited request, which was not too bad for me.
+
+The tools and dependency are well listed in the requirements.txt file.
+
+Thank you for reading!
