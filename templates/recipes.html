@@ -21,10 +21,10 @@
             <div class="d-flex justify-content-end">
               
               <form>
-                <button class="btn btn-primary btn-sm"
-                        formaction="/add_menu?id={{ recipe['id'] }}&title={{recipe['title']}} "
-                        formmethod="GET">Add to menu
-                </button>
+                <a class="btn btn-primary btn-sm"
+                        href="/add_menu?id={{ recipe['id'] }}&title={{recipe['title']}} "
+                        >Add to menu
+              </a>
                 <button class="btn btn-danger btn-sm"
                         formaction="/add_fav?id={{ recipe['id']}}&title={{recipe['title']}}&image={{recipe['image']}} "
                         formmethod="POST">Add to favorite
