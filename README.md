@@ -10,7 +10,7 @@ nutritioanl level, ability to search recommendation based on food item you alrea
 
 save a favorite food and last but no the least is the ability to make a menu.
 
-The app allows users to seach and read without registering or loging in but can not make a menu or add to favorite.
+The app allows users to seach and read without registering or loging in but can not view or make a menu or add to favorite.
 
 Also users can edit there profile whenever they want once logged in.
 
